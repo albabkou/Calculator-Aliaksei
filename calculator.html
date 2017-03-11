@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">	
+	<style type="text/css">	
+	
+	#a{
+		width: 296px;
+		height: 124px;
+		border: solid black 1px;
+		background-color: grey;
+		text-align: right;
+		font-size: 50px;
+		font-family: 'Roboto', sans-serif;
+		color: white;
+		position: relative;
+		top: 126px;
+	}
+
+		body {
+			background: url(images/calc.jpeg) no-repeat center center fixed;
+			background-size: cover;
+		}
+		table {
+			border: solid black 1px;
+			width: 300px;
+			height: 400px;
+			text-align: center;
+
+		}
+		
+
+		td {
+		border: solid;
+		background-color: orange;
+		font-family: 'Roboto', sans-serif;
+		}
+
+		th{
+			height: 120px;
+			border: solid black 1px;
+			background-color: grey;
+		}
+		.btn{
+			border: solid;
+			background-color: orange;
+			font-family: 'Roboto', sans-serif;
+			font-size: 20px;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<center>
+		<table>
+<form name="calculator">
+	<input id="a" type="text" name="result"/>
+<th colspan = "4"></th>
+	<tr>
+		<td colspan = "2"><input class="btn" type="button" value="AVG" onclick="avg()"></td>
+		<td><input class="btn" type="button" value="C" onclick="calculator.result.value =''"/></td>
+		<td><input class="btn" type="button" value="/" onclick="calculator.result.value +=' / '"/></td>
+	<tr>
+		<td><input class="btn" type="button" value="7" onclick="calculator.result.value +='7'"/></td>
+		<td><input class="btn" type="button" value="8" onclick="calculator.result.value +='8'"/></td>
+		<td><input class="btn" type="button" value="9" onclick="calculator.result.value +='9'"/></td>
+		<td><input class="btn" type="button" value="x" onclick="calculator.result.value +=' * '"/></td>
+	</tr>
+	<tr>
+		<td><input class="btn" type="button" value="4" onclick="calculator.result.value +='4'"/></td>
+		<td><input class="btn" type="button" value="5" onclick="calculator.result.value +='5'"/></td>
+		<td><input class="btn" type="button" value="6" onclick="calculator.result.value +='6'"/></td>
+		<td><input class="btn" type="button" value="-" onclick="calculator.result.value +=' - '"/></td>
+	</tr>
+		<tr>
+		<td><input class="btn" type="button" value="1" onclick="calculator.result.value +='1'"/></td>
+		<td><input class="btn" type="button" value="2" onclick="calculator.result.value +='2'"/></td>
+		<td><input class="btn" type="button" value="3" onclick="calculator.result.value +='3'"/></td>
+		<td><input class="btn" type="button" value="+" onclick="calculator.result.value +=' + '"/></td>
+	<tr>
+
+		<td colspan = "2"><input class="btn" type="button" value="0" onclick="calculator.result.value +='0'"/></td>
+		<td><input class="btn" type="button" value="." onclick="calculator.result.value +='.'"/></td>
+		<td><input class="btn" type="button" value="=" onclick="calculator.result.value =eval(calculator.result.value)"/></td>
+	</tr>
+</table>
+	</center>
+</body>
+<script type="text/javascript">
+
+function avg(){
+	var sum = eval(calculator.result.value);
+	var string = calculator.result.value;
+	var container = string.split(' ');
+	var justNumbers = [];
+
+	for (var i= 0; i < container.length; i++){
+		if (isNaN(container[i]) == false){
+			justNumbers.push(container[i]);
+		}
+	}
+	var average= sum/justNumbers.length;
+	calculator.result.value = average;
+
+}
+</script>
+</html>
